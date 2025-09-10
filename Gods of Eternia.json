@@ -3087,6 +3087,14 @@
         "name": "NewSprite10",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/varraDeVida.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "varraDeVida",
+        "smoothed": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -3102,10 +3110,10 @@
       "effects": [],
       "behaviors": [
         {
-          "cost": 2,
-          "impassable": true,
           "name": "PathfindingObstacle",
-          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+          "cost": 2,
+          "impassable": true
         }
       ],
       "animations": [
@@ -3181,10 +3189,10 @@
       "effects": [],
       "behaviors": [
         {
-          "cost": 2,
-          "impassable": false,
           "name": "PathfindingObstacle",
-          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+          "cost": 2,
+          "impassable": false
         },
         {
           "name": "SmoothCamera",
@@ -5511,10 +5519,10 @@
       "effects": [],
       "behaviors": [
         {
-          "cost": 1,
-          "impassable": false,
           "name": "PathfindingObstacle",
-          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+          "cost": 1,
+          "impassable": false
         }
       ],
       "content": {
@@ -5688,10 +5696,10 @@
       "effects": [],
       "behaviors": [
         {
-          "cost": 2,
-          "impassable": false,
           "name": "PathfindingObstacle",
-          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+          "cost": 2,
+          "impassable": false
         }
       ],
       "animations": [
@@ -6003,12 +6011,12 @@
         {
           "name": "Vida",
           "type": "number",
-          "value": 100
+          "value": 50
         },
         {
           "name": "vidaMax",
           "type": "number",
-          "value": 100
+          "value": 50
         },
         {
           "name": "Golpeado",
@@ -6057,6 +6065,8 @@
           "PercentDamageReduction": 0
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior",
           "acceleration": 300,
           "allowDiagonals": true,
           "angleOffset": 0,
@@ -6067,10 +6077,8 @@
           "gridOffsetX": 0,
           "gridOffsetY": 0,
           "maxSpeed": 100,
-          "name": "Pathfinding",
           "rotateObject": false,
-          "smoothingMaxCellGap": 1,
-          "type": "PathfindingBehavior::PathfindingBehavior"
+          "smoothingMaxCellGap": 1
         }
       ],
       "animations": [
@@ -7430,10 +7438,10 @@
       "effects": [],
       "behaviors": [
         {
-          "cost": 2,
-          "impassable": true,
           "name": "PathfindingObstacle",
-          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+          "cost": 2,
+          "impassable": true
         }
       ],
       "animations": [
@@ -7449,6 +7457,67 @@
                 {
                   "hasCustomCollisionMask": true,
                   "image": "NewSprite10",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "vidaActualJugador",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "varraDeVida",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "varraDeVida",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -7530,6 +7599,9 @@
       },
       {
         "objectName": "colicion_enemigos"
+      },
+      {
+        "objectName": "vidaActualJugador"
       }
     ]
   },
@@ -7562,6 +7634,7 @@
       ]
     },
     {
+      "folded": true,
       "name": "Estadisticas",
       "type": "structure",
       "children": [
@@ -7581,9 +7654,692 @@
           "value": 10
         }
       ]
+    },
+    {
+      "name": "esena_completada_nivel_2",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "username",
+      "type": "string",
+      "value": "0"
+    },
+    {
+      "name": "foto_perfil",
+      "type": "string",
+      "value": "0"
+    },
+    {
+      "name": "access_token",
+      "type": "string",
+      "value": "0"
+    },
+    {
+      "name": "login_ok",
+      "type": "number",
+      "value": 0
     }
   ],
   "layouts": [
+    {
+      "b": 209,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "verificacion_95datos_95user",
+      "name": "verificacion_datos_user",
+      "r": 209,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "",
+      "v": 209,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.20902556228335234,
+        "windowMask": false
+      },
+      "objectsGroups": [],
+      "variables": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "cargando",
+          "persistentUuid": "562ce75d-29b2-4ba0-96f5-583a4c2d66af",
+          "width": 0,
+          "x": 984,
+          "y": 539,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "cargando",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "!!!!CARGANDOOO!!!!!",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 60,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "!!!!CARGANDOOO!!!!!",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 60,
+            "lineHeight": 0,
+            "color": "0;0;0"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "falloCargar",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "FALLO AL CARGAR :(",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 60,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "FALLO AL CARGAR :(",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 60,
+            "lineHeight": 0,
+            "color": "0;0;0"
+          }
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "cargando"
+          },
+          {
+            "objectName": "falloCargar"
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "try {",
+            "  const raw = localStorage.getItem(\"goe_user\");",
+            "  if (raw) {",
+            "    const user = JSON.parse(raw);",
+            "",
+            "    if (user && user.foto_perfil) {",
+            "      // Si ya existe una imagen anterior, la borramos",
+            "      const oldImg = document.getElementById(\"avatarUsuario\");",
+            "      if (oldImg) oldImg.remove();",
+            "",
+            "      // Crear la imagen circular",
+            "      let img = document.createElement(\"img\");",
+            "      img.id = \"avatarUsuario\";",
+            "      img.src = user.foto_perfil;",
+            "",
+            "      img.style.position = \"absolute\";",
+            "      img.style.top = \"20px\";",
+            "      img.style.left = \"20px\";",
+            "      img.style.width = \"100px\";",
+            "      img.style.height = \"100px\";",
+            "      img.style.borderRadius = \"50%\";",
+            "      img.style.objectFit = \"cover\";",
+            "      img.style.border = \"3px solid white\";",
+            "      img.style.zIndex = \"1000\";",
+            "",
+            "      document.body.appendChild(img);",
+            "",
+            "      // ✅ Indicar que todo salió bien",
+            "      runtimeScene.getGame().getVariables().get(\"login_ok\").setNumber(1);",
+            "",
+            "      console.log(\"Usuario cargado en el juego:\", user.username);",
+            "    } else {",
+            "      // ⚠️ No hay foto en el usuario",
+            "      runtimeScene.getGame().getVariables().get(\"login_ok\").setNumber(-1);",
+            "      console.warn(\"⚠️ El usuario no tiene foto_perfil en goe_user\");",
+            "    }",
+            "  } else {",
+            "    // ⚠️ No existe goe_user en Local Storage",
+            "    runtimeScene.getGame().getVariables().get(\"login_ok\").setNumber(-1);",
+            "    console.warn(\"⚠️ No se encontró goe_user en localStorage\");",
+            "  }",
+            "} catch (e) {",
+            "  runtimeScene.getGame().getVariables().get(\"login_ok\").setNumber(-1);",
+            "  console.error(\"Error leyendo localStorage:\", e);",
+            "}"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "login_ok",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "cargando",
+                "Text",
+                "=",
+                "\"Usuario cargado con exito\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "login_ok",
+                "!=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "cargando",
+                "Text",
+                "=",
+                "\"Error al cargar los datos del usuario\""
+              ]
+            }
+          ]
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Ambient Hemisphere Light",
+              "doubleParameters": {
+                "elevation": 40,
+                "intensity": 0.33,
+                "rotation": 300
+              },
+              "stringParameters": {
+                "groundColor": "127;127;127",
+                "skyColor": "255;255;255",
+                "top": "Z+"
+              },
+              "booleanParameters": {}
+            },
+            {
+              "effectType": "Scene3D::DirectionalLight",
+              "name": "3D Sun Light",
+              "doubleParameters": {
+                "distanceFromCamera": 1500,
+                "elevation": 40,
+                "frustumSize": 4000,
+                "intensity": 0.75,
+                "minimumShadowBias": 0,
+                "rotation": 300
+              },
+              "stringParameters": {
+                "color": "255;255;255",
+                "shadowQuality": "medium",
+                "top": "Z+"
+              },
+              "booleanParameters": {
+                "isCastingShadow": true
+              }
+            }
+          ]
+        }
+      ],
+      "behaviorsSharedData": [
+        {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Health",
+          "type": "Health::Health"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "SmoothCamera",
+          "type": "SmoothCamera::SmoothCamera"
+        },
+        {
+          "name": "Text",
+          "type": "TextContainerCapability::TextContainerBehavior"
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ]
+    },
+    {
+      "b": 209,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "perfil_32usuario",
+      "name": "perfil usuario",
+      "r": 209,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "",
+      "v": 209,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.546875,
+        "windowMask": false
+      },
+      "objectsGroups": [],
+      "variables": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "nombreUsuario",
+          "persistentUuid": "70c46919-ad7b-4265-81d6-66befe5fac3f",
+          "width": 0,
+          "x": 803,
+          "y": 297,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "nombreUsuario",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "nombreUsuario",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 60,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "nombreUsuario",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 60,
+            "lineHeight": 0,
+            "color": "0;0;0"
+          }
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "nombreUsuario"
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const raw = localStorage.getItem(\"goe_user\");",
+                "let foto = \"https://via.placeholder.com/150/000000/FFFFFF/?text=Avatar\"; // 🔥 default",
+                "",
+                "if (raw) {",
+                "  const user = JSON.parse(raw);",
+                "  if (user && user.foto_perfil) {",
+                "    foto = user.foto_perfil; // si existe, usamos la del usuario",
+                "  }",
+                "}",
+                "",
+                "// Si ya existe un avatar, lo reusamos",
+                "let avatar = document.getElementById(\"avatarUsuario\");",
+                "if (!avatar) {",
+                "  avatar = document.createElement(\"img\");",
+                "  avatar.id = \"avatarUsuario\";",
+                "  avatar.style.position = \"absolute\";",
+                "  avatar.style.borderRadius = \"50%\";",
+                "  avatar.style.objectFit = \"cover\";",
+                "  avatar.style.border = \"3px solid white\";",
+                "  document.body.appendChild(avatar);",
+                "}",
+                "",
+                "// Configurar la imagen (usuario o default)",
+                "avatar.src = foto;",
+                "",
+                "// Ajustar posición y tamaño según la escena",
+                "avatar.style.top = \"120px\";",
+                "avatar.style.left = \"200px\";",
+                "avatar.style.width = \"120px\";",
+                "avatar.style.height = \"120px\";",
+                "avatar.style.display = \"block\";",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "nombreUsuario",
+                "Text",
+                "=",
+                "username"
+              ]
+            }
+          ]
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Ambient Hemisphere Light",
+              "doubleParameters": {
+                "elevation": 40,
+                "intensity": 0.33,
+                "rotation": 300
+              },
+              "stringParameters": {
+                "groundColor": "127;127;127",
+                "skyColor": "255;255;255",
+                "top": "Z+"
+              },
+              "booleanParameters": {}
+            },
+            {
+              "effectType": "Scene3D::DirectionalLight",
+              "name": "3D Sun Light",
+              "doubleParameters": {
+                "distanceFromCamera": 1500,
+                "elevation": 40,
+                "frustumSize": 4000,
+                "intensity": 0.75,
+                "minimumShadowBias": 0,
+                "rotation": 300
+              },
+              "stringParameters": {
+                "color": "255;255;255",
+                "shadowQuality": "medium",
+                "top": "Z+"
+              },
+              "booleanParameters": {
+                "isCastingShadow": true
+              }
+            }
+          ]
+        }
+      ],
+      "behaviorsSharedData": [
+        {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Health",
+          "type": "Health::Health"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "SmoothCamera",
+          "type": "SmoothCamera::SmoothCamera"
+        },
+        {
+          "name": "Text",
+          "type": "TextContainerCapability::TextContainerBehavior"
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ]
+    },
     {
       "b": 209,
       "disableInputWhenNotFocused": true,
@@ -10400,7 +11156,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 1.6888536947041612,
+        "zoomFactor": 0.4481978045410483,
         "windowMask": true
       },
       "objectsGroups": [],
@@ -10943,7 +11699,7 @@
           "layer": "",
           "name": "Teletransporte",
           "persistentUuid": "79e595e8-f459-459f-82eb-65c323ebd12b",
-          "width": 49,
+          "width": 64,
           "x": 358,
           "y": 601,
           "zOrder": 13,
@@ -10997,6 +11753,23 @@
           "x": 420,
           "y": 599,
           "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 29,
+          "keepRatio": true,
+          "layer": "hud",
+          "name": "vidaActualJugador",
+          "persistentUuid": "80b1174e-9c9d-4889-8cbf-fce1fc08fc83",
+          "width": 262,
+          "x": 6,
+          "y": 2,
+          "zOrder": 15,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -11081,6 +11854,41 @@
           "target": "Personaje"
         },
         {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "esena_completada_nivel_2",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "colicion_enemigos",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Spawnpoint",
+                ""
+              ]
+            }
+          ]
+        },
+        {
           "type": "BuiltinCommonInstructions::Comment",
           "color": {
             "b": 109,
@@ -11107,6 +11915,20 @@
                 "903",
                 "811",
                 "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ClampCamera"
+              },
+              "parameters": [
+                "",
+                "625",
+                "337",
+                "1003",
+                "811",
+                "\"hud\"",
                 ""
               ]
             }
@@ -11293,6 +12115,39 @@
               "width": 0
             }
           ],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Light",
+              "doubleParameters": {
+                "elevation": 45,
+                "intensity": 1,
+                "rotation": 0
+              },
+              "stringParameters": {
+                "groundColor": "64;64;64",
+                "skyColor": "255;255;255",
+                "top": "Y-"
+              },
+              "booleanParameters": {}
+            }
+          ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "hud",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
           "effects": [
             {
               "effectType": "Scene3D::HemisphereLight",
@@ -36782,7 +37637,7 @@
                     "value": "Wait"
                   },
                   "parameters": [
-                    "5"
+                    "2"
                   ]
                 },
                 {
@@ -36829,6 +37684,15 @@
                   "parameters": [
                     "",
                     "\"Spawn de enemigos\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"revicion enemigos\""
                   ]
                 },
                 {
@@ -36939,7 +37803,7 @@
                     "Enemigo",
                     "Resizable",
                     "=",
-                    "20"
+                    "27"
                   ]
                 },
                 {
@@ -36950,7 +37814,17 @@
                     "Enemigo",
                     "Resizable",
                     "=",
-                    "20"
+                    "27"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Enemigo",
+                    "=",
+                    "3"
                   ]
                 }
               ],
@@ -36993,7 +37867,7 @@
                   "parameters": [
                     "Enemigo",
                     "Personaje_Principal",
-                    "30",
+                    "90",
                     ""
                   ]
                 }
@@ -37025,7 +37899,7 @@
                   "parameters": [
                     "Personaje_Principal",
                     "Enemigo",
-                    "30",
+                    "90",
                     ""
                   ]
                 }
@@ -37057,12 +37931,23 @@
                   "parameters": [
                     "Enemigo",
                     "Enemigo",
-                    "30",
+                    "50",
                     ""
                   ]
                 }
               ],
-              "actions": []
+              "actions": [
+                {
+                  "type": {
+                    "value": "SeparateFromObjects"
+                  },
+                  "parameters": [
+                    "Enemigo",
+                    "Enemigo",
+                    ""
+                  ]
+                }
+              ]
             },
             {
               "type": "BuiltinCommonInstructions::ForEach",
@@ -37148,6 +38033,15 @@
                   "parameters": [
                     "vidaActualSprite",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"revicion enemigos\""
                   ]
                 }
               ]
@@ -37242,6 +38136,62 @@
                     "Enemigos",
                     "colision",
                     ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"revicion enemigos\"",
+                    ">=",
+                    "2.5"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "SceneInstancesCount"
+                      },
+                      "parameters": [
+                        "",
+                        "Enemigo",
+                        "<=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "colicion_enemigos",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "esena_completada_nivel_2",
+                        "True",
+                        ""
+                      ]
+                    }
                   ]
                 }
               ]
@@ -37550,6 +38500,35 @@
             }
           ],
           "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Personaje_Principal",
+                "colicion_enemigos",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SeparateFromObjects"
+              },
+              "parameters": [
+                "Personaje_Principal",
+                "colicion_enemigos",
+                ""
+              ]
+            }
+          ]
         }
       ]
     },
