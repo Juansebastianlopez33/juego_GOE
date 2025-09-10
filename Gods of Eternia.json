@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 237,
+    "build": 239,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -3079,6 +3079,14 @@
         "name": "vidaActualSprite",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/NewSprite10.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite10",
+        "smoothed": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -3092,7 +3100,14 @@
       "updateIfNotVisible": false,
       "variables": [],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "cost": 2,
+          "impassable": true,
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        }
+      ],
       "animations": [
         {
           "name": "NewSprite",
@@ -3165,6 +3180,12 @@
       ],
       "effects": [],
       "behaviors": [
+        {
+          "cost": 2,
+          "impassable": false,
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
         {
           "name": "SmoothCamera",
           "type": "SmoothCamera::SmoothCamera",
@@ -5488,7 +5509,14 @@
       "type": "TileMap::SimpleTileMap",
       "variables": [],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "cost": 1,
+          "impassable": false,
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        }
+      ],
       "content": {
         "atlasImage": "Asets Juego\\Sprites\\Mapeado\\Ambiente Expandido.png2",
         "rowCount": 32,
@@ -5658,7 +5686,14 @@
         }
       ],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "cost": 2,
+          "impassable": false,
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        }
+      ],
       "animations": [
         {
           "name": "NewSprite",
@@ -5827,6 +5862,7 @@
         "textAlignment": "center",
         "verticalTextAlignment": "top",
         "characterSize": 20,
+        "lineHeight": 0,
         "color": "255;255;255"
       }
     },
@@ -5978,6 +6014,16 @@
           "name": "Golpeado",
           "type": "boolean",
           "value": false
+        },
+        {
+          "name": "ultimaX",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "ultimaY",
+          "type": "number",
+          "value": 0
         }
       ],
       "effects": [],
@@ -6009,6 +6055,22 @@
           "ShieldDamageTaken": 2.0247e-320,
           "FlatDamageReduction": 0,
           "PercentDamageReduction": 0
+        },
+        {
+          "acceleration": 300,
+          "allowDiagonals": true,
+          "angleOffset": 0,
+          "angularMaxSpeed": 180,
+          "cellHeight": 20,
+          "cellWidth": 20,
+          "extraBorder": 0,
+          "gridOffsetX": 0,
+          "gridOffsetY": 0,
+          "maxSpeed": 100,
+          "name": "Pathfinding",
+          "rotateObject": false,
+          "smoothingMaxCellGap": 1,
+          "type": "PathfindingBehavior::PathfindingBehavior"
         }
       ],
       "animations": [
@@ -7357,6 +7419,74 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "colicion_enemigos",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "cost": 2,
+          "impassable": true,
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite10",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -7397,6 +7527,9 @@
       },
       {
         "objectName": "Gui_Daño"
+      },
+      {
+        "objectName": "colicion_enemigos"
       }
     ]
   },
@@ -7611,6 +7744,7 @@
             "textAlignment": "left",
             "verticalTextAlignment": "top",
             "characterSize": 50,
+            "lineHeight": 0,
             "color": "255;255;255"
           }
         }
@@ -7821,6 +7955,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -9067,6 +9209,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -10201,6 +10351,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -10752,8 +10910,8 @@
           "layer": "",
           "name": "Teletransporte",
           "persistentUuid": "12d20e14-c3d6-4ef5-8322-833df8304467",
-          "width": 64,
-          "x": 914,
+          "width": 63,
+          "x": 915,
           "y": 594,
           "zOrder": 12,
           "numberProperties": [],
@@ -10808,6 +10966,40 @@
               "value": "Nivel 3"
             }
           ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 156,
+          "keepRatio": true,
+          "layer": "",
+          "name": "colicion_enemigos",
+          "persistentUuid": "a8a66555-0430-44c7-a344-86a9e2d99e49",
+          "width": 28,
+          "x": 888,
+          "y": 594,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 156,
+          "keepRatio": true,
+          "layer": "",
+          "name": "colicion_enemigos",
+          "persistentUuid": "92f53a5a-da9a-412a-b398-6b992e182a77",
+          "width": 28,
+          "x": 420,
+          "y": 599,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -11140,6 +11332,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -12565,6 +12765,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -13178,6 +13386,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -14167,6 +14383,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -15605,6 +15829,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -15646,7 +15878,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.9934433498259578,
+        "zoomFactor": 1.0615714305219985,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -16175,6 +16407,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -16792,6 +17032,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -16833,7 +17081,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 1.2530387740589852,
+        "zoomFactor": 1.134371579716096,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -17216,6 +17464,22 @@
               "value": 652
             }
           ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Spawnpoint",
+          "persistentUuid": "27941729-a756-484c-9417-dca1ee1589ec",
+          "width": 0,
+          "x": 696,
+          "y": 560,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -17428,6 +17692,17 @@
                 "",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "SceneInstancesCount"
+              },
+              "parameters": [
+                "",
+                "Enemigo",
+                "=",
+                "2"
+              ]
             }
           ],
           "actions": [
@@ -17510,6 +17785,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -18003,6 +18286,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -18548,6 +18839,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -19021,6 +19320,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -19814,6 +20121,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -20379,6 +20694,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -20920,6 +21243,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -21569,6 +21900,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -22448,6 +22787,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -22974,6 +23321,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -23447,6 +23802,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -24160,6 +24523,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -24862,6 +25233,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -25977,6 +26356,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -27310,6 +27697,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -27966,6 +28361,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -29957,6 +30360,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -31420,6 +31831,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -31932,6 +32351,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -33594,6 +34021,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -34706,6 +35141,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -34954,6 +35397,14 @@
           "type": "OpacityCapability::OpacityBehavior"
         },
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
           "name": "Resizable",
           "type": "ResizableCapability::ResizableBehavior"
         },
@@ -35059,6 +35510,7 @@
             "textAlignment": "center",
             "verticalTextAlignment": "top",
             "characterSize": 200,
+            "lineHeight": 0,
             "color": "255;255;255"
           }
         }
@@ -35158,6 +35610,14 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior"
         },
         {
           "name": "Resizable",
@@ -36446,7 +36906,7 @@
                     "vidaActualSprite",
                     "Resizable",
                     "=",
-                    "Enemigo.Width()"
+                    "34"
                   ]
                 },
                 {
@@ -36457,7 +36917,7 @@
                     "vidaMaximaSprite",
                     "Resizable",
                     "=",
-                    "Enemigo.Width()"
+                    "34"
                   ]
                 },
                 {
@@ -36479,7 +36939,7 @@
                     "Enemigo",
                     "Resizable",
                     "=",
-                    "34"
+                    "20"
                   ]
                 },
                 {
@@ -36490,11 +36950,31 @@
                     "Enemigo",
                     "Resizable",
                     "=",
-                    "32"
+                    "20"
                   ]
                 }
               ],
               "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": []
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": []
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": []
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": []
+                },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [],
@@ -36504,18 +36984,170 @@
             },
             {
               "type": "BuiltinCommonInstructions::ForEach",
-              "object": "Personaje_Principal",
-              "conditions": [],
+              "object": "Enemigo",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Distance"
+                  },
+                  "parameters": [
+                    "Enemigo",
+                    "Personaje_Principal",
+                    "30",
+                    ""
+                  ]
+                }
+              ],
               "actions": [
                 {
                   "type": {
-                    "value": "AddForceVers"
+                    "value": "PathfindingBehavior::SetDestination"
                   },
                   "parameters": [
-                    "Enemigos",
+                    "Enemigo",
+                    "Pathfinding",
+                    "",
+                    "Enemigo.X() + (Enemigo.X() - Personaje_Principal.X())",
+                    "Enemigo.Y() + (Enemigo.Y() - Personaje_Principal.Y())"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "Enemigo",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Distance"
+                  },
+                  "parameters": [
                     "Personaje_Principal",
-                    "1",
-                    "1"
+                    "Enemigo",
+                    "30",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PathfindingBehavior::SetDestination"
+                  },
+                  "parameters": [
+                    "Enemigo",
+                    "Pathfinding",
+                    "Enemigo.Y() + (Enemigo.Y() - Personaje_Principal.Y())",
+                    "Personaje_Principal.X() + RandomInRange(-25, 25)",
+                    "Personaje_Principal.Y() + RandomInRange(-25, 25)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "Enemigo",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Distance"
+                  },
+                  "parameters": [
+                    "Enemigo",
+                    "Enemigo",
+                    "30",
+                    ""
+                  ]
+                }
+              ],
+              "actions": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "Enemigo",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Enemigo",
+                    "Vida",
+                    "<",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "LinkedObjects::PickObjectsLinkedTo"
+                  },
+                  "parameters": [
+                    "",
+                    "vidaActualSprite",
+                    "Enemigo",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "LinkedObjects::PickObjectsLinkedTo"
+                  },
+                  "parameters": [
+                    "",
+                    "vidaMaximaSprite",
+                    "Enemigo",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "LinkedObjects::LinkObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "Enemigo",
+                    "vidaActualSprite"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "LinkedObjects::LinkObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "Enemigo",
+                    "vidaMaximaSprite"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Enemigo",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "vidaMaximaSprite",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "vidaActualSprite",
+                    ""
                   ]
                 }
               ]
@@ -36581,16 +37213,6 @@
                     "Resizable",
                     "=",
                     "(Enemigo.Vida / Enemigo.vidaMax) * vidaMaximaSprite.Width()"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "MettreX"
-                  },
-                  "parameters": [
-                    "vidaActualSprite",
-                    "=",
-                    "vidaMaximaSprite.X() - (vidaMaximaSprite.Width() - vidaActualSprite.Width()) / 2"
                   ]
                 }
               ]
@@ -36869,52 +37491,6 @@
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [],
                   "actions": []
-                },
-                {
-                  "type": "BuiltinCommonInstructions::ForEach",
-                  "object": "Enemigo",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "NumberObjectVariable"
-                      },
-                      "parameters": [
-                        "Enemigo",
-                        "Vida",
-                        "<=",
-                        "0"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "Delete"
-                      },
-                      "parameters": [
-                        "Enemigo",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Delete"
-                      },
-                      "parameters": [
-                        "vidaMaximaSprite",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Delete"
-                      },
-                      "parameters": [
-                        "vidaActualSprite",
-                        ""
-                      ]
-                    }
-                  ]
                 }
               ]
             },
@@ -36981,105 +37557,6 @@
       "associatedLayout": "Nivel 2",
       "name": "Enemigos",
       "events": [
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
-          "name": "Vida enemigos",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [],
-          "parameters": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "NumberObjectVariable"
-              },
-              "parameters": [
-                "Enemigos",
-                "Vida",
-                "<",
-                "Enemigos.vidaMax"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "vidaMaximaSprite",
-                "Enemigos.X()",
-                "Enemigos.Y() - 40",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "vidaActualSprite",
-                "Enemigos.X()",
-                "Enemigos.Y() - 40",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "ResizableCapability::ResizableBehavior::SetWidth"
-              },
-              "parameters": [
-                "vidaMaximaSprite",
-                "Resizable",
-                "=",
-                "50"
-              ]
-            },
-            {
-              "type": {
-                "value": "ResizableCapability::ResizableBehavior::SetWidth"
-              },
-              "parameters": [
-                "vidaActualSprite",
-                "Resizable",
-                "=",
-                "50 * Variable(Enemigos.Vida) / Variable(Enemigos.vidaMax)"
-              ]
-            },
-            {
-              "type": {
-                "value": "MettreXY"
-              },
-              "parameters": [
-                "vidaMaximaSprite",
-                "=",
-                "Enemigos.X()",
-                "=",
-                "Enemigos.Y() - 40"
-              ]
-            },
-            {
-              "type": {
-                "value": "MettreXY"
-              },
-              "parameters": [
-                "vidaActualSprite",
-                "=",
-                "Enemigos.X()",
-                "=",
-                "Enemigos.Y() - 40"
-              ]
-            }
-          ]
-        },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
