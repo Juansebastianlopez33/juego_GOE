@@ -3135,6 +3135,7 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Resource bars/5c3135f6fa8587da82ddea950881fc8b35d422bb806d9331f8b47fdc715ee76a_Wood Bar Border.png",
           "name": "Wood Bar Border.png"
         }
+<<<<<<< HEAD
       },
       {
         "file": "Principal.png",
@@ -3783,6 +3784,8 @@
         "name": "NewSprite18",
         "smoothed": false,
         "userAdded": false
+=======
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
       }
     ],
     "resourceFolders": []
@@ -8246,6 +8249,52 @@
       ]
     },
     {
+<<<<<<< HEAD
+=======
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "INTERACION",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Presiona E para interactuar",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 10,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Presiona E para interactuar",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 10,
+        "lineHeight": 0,
+        "color": "0;0;0"
+      }
+    },
+    {
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
       "name": "colicion_libro",
@@ -8308,6 +8357,24 @@
     },
     {
       "assetStoreId": "",
+<<<<<<< HEAD
+=======
+      "name": "libros",
+      "type": "TileMap::SimpleTileMap",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "atlasImage": "Libros.png",
+        "rowCount": 9,
+        "columnCount": 8,
+        "tileSize": 32,
+        "tilesWithHitBox": "0,1,2,3,6,5,4,7,15,14,13,12,11,9,10,8,16,17,18,19,21,22,20,23,31,30,39,38,29,37,28,36,27,35,26,34,25,33,24,32,40,41,49,48,42,50,43,51,44,52,45,53,46,54,47,55,56,57,58,59,60,61,62,63,64,65"
+      }
+    },
+    {
+      "assetStoreId": "",
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
       "bold": false,
       "italic": false,
       "name": "texto_curso",
@@ -8348,6 +8415,7 @@
         "lineHeight": 0,
         "color": "0;0;0"
       }
+<<<<<<< HEAD
     },
     {
       "adaptCollisionMaskAutomatically": true,
@@ -11284,6 +11352,8 @@
           ]
         }
       ]
+=======
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
     }
   ],
   "objectsFolderStructure": {
@@ -11361,6 +11431,7 @@
         "objectName": "vidaActualJugador"
       },
       {
+<<<<<<< HEAD
         "objectName": "colicion_libro"
       },
       {
@@ -11386,6 +11457,15 @@
       },
       {
         "objectName": "Pergamino"
+=======
+        "objectName": "INTERACION"
+      },
+      {
+        "objectName": "colicion_libro"
+      },
+      {
+        "objectName": "libros"
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
       },
       {
         "objectName": "texto_curso"
@@ -11502,6 +11582,7 @@
       "name": "CursoGlobal",
       "type": "string",
       "value": ""
+<<<<<<< HEAD
     },
     {
       "name": "tema",
@@ -11532,6 +11613,8 @@
       "name": "respuesta_last",
       "type": "string",
       "value": "0"
+=======
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
     }
   ],
   "layouts": [
@@ -12052,6 +12135,7 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+<<<<<<< HEAD
         },
         {
           "angle": 0,
@@ -12068,6 +12152,8 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+=======
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
         }
       ],
       "objects": [
@@ -12174,6 +12260,7 @@
               ]
             }
           ]
+<<<<<<< HEAD
         },
         {
           "assetStoreId": "",
@@ -12217,6 +12304,8 @@
             "lineHeight": 0,
             "color": "0;0;0"
           }
+=======
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
         }
       ],
       "objectsFolderStructure": {
@@ -12226,9 +12315,12 @@
             "objectName": "nombreUsuario"
           },
           {
+<<<<<<< HEAD
             "objectName": "TextoCargando"
           },
           {
+=======
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
             "objectName": "NewSprite"
           }
         ]
@@ -12251,6 +12343,7 @@
             {
               "type": "BuiltinCommonInstructions::JsCode",
               "inlineCode": [
+<<<<<<< HEAD
                 "// Envolvemos toda la lógica en una función asíncrona autoejecutable",
                 "// para poder usar 'await' y manejar operaciones de red.",
                 "(async function() {",
@@ -12343,6 +12436,51 @@
                 "        gameState.getChild(\"Status\").setString(\"Error\");",
                 "    }",
                 "})();"
+=======
+                "const raw = localStorage.getItem(\"goe_user\");",
+                "let foto = \"https://via.placeholder.com/150/000000/FFFFFF/?text=Avatar\"; // default",
+                "let username = \"Invitado\";",
+                "",
+                "if (raw) {",
+                "  const user = JSON.parse(raw);",
+                "  if (user) {",
+                "    if (user.foto_perfil) {",
+                "      foto = user.foto_perfil;",
+                "    }",
+                "    if (user.username) {",
+                "      username = user.username;",
+                "    }",
+                "    // 🔥 Guardamos en variables globales de GDevelop",
+                "    runtimeScene.getGame().getVariables().get(\"username\").setString(username);",
+                "    runtimeScene.getGame().getVariables().get(\"foto_perfil\").setString(foto);",
+                "    runtimeScene.getGame().getVariables().get(\"access_token\").setString(user.access_token || \"\");",
+                "    runtimeScene.getGame().getVariables().get(\"login_ok\").setNumber(1);",
+                "  }",
+                "} else {",
+                "  runtimeScene.getGame().getVariables().get(\"login_ok\").setNumber(0);",
+                "}",
+                "",
+                "// Crear o actualizar avatar",
+                "let avatar = document.getElementById(\"avatarUsuario\");",
+                "if (!avatar) {",
+                "  avatar = document.createElement(\"img\");",
+                "  avatar.id = \"avatarUsuario\";",
+                "  avatar.style.position = \"absolute\";",
+                "  avatar.style.borderRadius = \"50%\";",
+                "  avatar.style.objectFit = \"cover\";",
+                "  avatar.style.border = \"3px solid white\";",
+                "  document.body.appendChild(avatar);",
+                "}",
+                "",
+                "// Configurar imagen",
+                "avatar.src = foto;",
+                "avatar.style.top = \"120px\";",
+                "avatar.style.left = \"200px\";",
+                "avatar.style.width = \"120px\";",
+                "avatar.style.height = \"120px\";",
+                "avatar.style.display = \"block\";",
+                ""
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
               ],
               "parameterObjects": "",
               "useStrict": true,
@@ -14608,6 +14746,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
+<<<<<<< HEAD
         "zoomFactor": 1.0615714305220194,
         "windowMask": true
       },
@@ -14624,6 +14763,12 @@
           ]
         }
       ],
+=======
+        "zoomFactor": 2.201995813710138,
+        "windowMask": true
+      },
+      "objectsGroups": [],
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
       "variables": [
         {
           "name": "curso_local",
@@ -14634,11 +14779,14 @@
           "name": "errores",
           "type": "number",
           "value": 0
+<<<<<<< HEAD
         },
         {
           "name": "Preguntas",
           "type": "string",
           "value": ""
+=======
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
         }
       ],
       "instances": [
@@ -14919,8 +15067,13 @@
           "name": "Detalles_mapa",
           "persistentUuid": "918744b5-81e8-4bed-93d7-1f84f28c1ef7",
           "width": 0,
+<<<<<<< HEAD
           "x": 489,
           "y": 436,
+=======
+          "x": 530,
+          "y": 438,
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [
@@ -15361,6 +15514,48 @@
             {
               "name": "tilemap",
               "value": "{\"tileWidth\":32,\"tileHeight\":32,\"dimX\":1,\"dimY\":1,\"layers\":[{\"id\":0,\"alpha\":1,\"tiles\":[[3]]}]}"
+<<<<<<< HEAD
+=======
+            }
+          ],
+          "initialVariables": []
+        },
+        {
+          "angle": 46,
+          "customSize": true,
+          "depth": 1,
+          "height": 14,
+          "keepRatio": true,
+          "layer": "",
+          "name": "colicion_libro",
+          "persistentUuid": "13eb4808-979b-47e8-98b6-3ba8da73ec6d",
+          "width": 14,
+          "x": 513,
+          "y": 418,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 32,
+          "keepRatio": true,
+          "layer": "",
+          "name": "libros",
+          "persistentUuid": "66e1a323-7def-472e-8d09-66137c24631b",
+          "width": 33,
+          "x": 504,
+          "y": 411,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [
+            {
+              "name": "tilemap",
+              "value": "{\"tileWidth\":32,\"tileHeight\":32,\"dimX\":1,\"dimY\":1,\"layers\":[{\"id\":0,\"alpha\":1,\"tiles\":[[28]]}]}"
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
             }
           ],
           "initialVariables": []
@@ -15549,6 +15744,7 @@
               ]
             }
           ]
+<<<<<<< HEAD
         },
         {
           "adaptCollisionMaskAutomatically": true,
@@ -15669,6 +15865,8 @@
               ]
             }
           ]
+=======
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
         }
       ],
       "objectsFolderStructure": {
@@ -15676,12 +15874,15 @@
         "children": [
           {
             "objectName": "Mapa_1"
+<<<<<<< HEAD
           },
           {
             "objectName": "Item_Pocion"
           },
           {
             "objectName": "Icono_Pocion"
+=======
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
           }
         ]
       },
@@ -15694,6 +15895,56 @@
           "target": "Personaje"
         },
         {
+<<<<<<< HEAD
+=======
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                "Personaje_Principal",
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "Personaje_Principal",
+                "=",
+                "Posicion_Inicial_Jugador.X",
+                "=",
+                "Posicion_Inicial_Jugador.Y"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Teletransporte"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "colicion_libro"
+              ]
+            }
+          ]
+        },
+        {
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
           "type": "BuiltinCommonInstructions::Comment",
           "color": {
             "b": 109,
@@ -16049,17 +16300,110 @@
           ]
         },
         {
+<<<<<<< HEAD
+=======
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "INTERACION",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"e\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "Interactuando_libros",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SendAsyncRequest"
+              },
+              "parameters": [
+                "\"http://100.68.144.119:5000/auth_juego/get-user-course/Sebas\"",
+                "\"\"",
+                "\"GET\"",
+                "\"\"",
+                "curso_local",
+                "errores"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "CursoGlobal",
+                "=",
+                "curso_local"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "INTERACION",
+                "Text",
+                "=",
+                "\"para cerrar presione x\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "texto_curso",
+                "Text",
+                "=",
+                "CursoGlobal"
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "texto_curso",
+                "colicion_libro.X()",
+                "colicion_libro.Y()",
+                ""
+              ]
+            }
+          ]
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
-                "value": "CollisionNP"
+                "value": "KeyFromTextPressed"
               },
               "parameters": [
-                "Personaje_Principal",
-                "Item_Pocion",
                 "",
-                "",
+                "\"x\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "Interactuando_libros",
+                "True",
                 ""
               ]
             }
@@ -16067,12 +16411,11 @@
           "actions": [
             {
               "type": {
-                "value": "Inventories::AddItem"
+                "value": "SetBooleanVariable"
               },
               "parameters": [
-                "",
-                "\"jugador\"",
-                "\"pocion\"",
+                "Interactuando_libros",
+                "False",
                 ""
               ]
             },
@@ -16081,7 +16424,82 @@
                 "value": "Delete"
               },
               "parameters": [
+                "INTERACION",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Personaje_Principal",
+<<<<<<< HEAD
                 "Item_Pocion",
+=======
+                "colicion_libro",
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
+                "",
+                "",
+                ""
+              ]
+<<<<<<< HEAD
+=======
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "Interactuando_libros",
+                "False",
+                ""
+              ]
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+<<<<<<< HEAD
+                "value": "Inventories::AddItem"
+              },
+              "parameters": [
+                "",
+                "\"jugador\"",
+                "\"pocion\"",
+=======
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "INTERACION",
+                "colicion_libro.X()",
+                "colicion_libro.Y()",
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
+                ""
+              ]
+            },
+            {
+              "type": {
+<<<<<<< HEAD
+                "value": "Delete"
+              },
+              "parameters": [
+                "Item_Pocion",
+=======
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "Interactuando_libros",
+                "True",
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
                 ""
               ]
             }
@@ -16089,6 +16507,7 @@
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
+<<<<<<< HEAD
           "conditions": [],
           "actions": [
             {
@@ -16108,6 +16527,21 @@
             "includeConfig": 0
           },
           "target": "inventario"
+=======
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "Interactuando_libros",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": []
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
         }
       ],
       "layers": [
@@ -16284,7 +16718,11 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
+<<<<<<< HEAD
         "zoomFactor": 0.3553434558817098,
+=======
+        "zoomFactor": 1.3389693172845802,
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
         "windowMask": true
       },
       "objectsGroups": [],
@@ -16884,6 +17322,7 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+<<<<<<< HEAD
         },
         {
           "angle": 0,
@@ -16900,6 +17339,8 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+=======
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
         }
       ],
       "objects": [
@@ -17002,7 +17443,11 @@
                 "vidaActualJugador",
                 "0",
                 "0",
+<<<<<<< HEAD
                 "\"UI\""
+=======
+                "\"HUD\""
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
               ]
             },
             {
@@ -17012,9 +17457,15 @@
               "parameters": [
                 "vidaActualJugador",
                 "=",
+<<<<<<< HEAD
                 "CameraX(\"UI\") + 10",
                 "=",
                 "CameraY(\"UI\") + 10"
+=======
+                "CameraX(\"HUD\") + 10",
+                "=",
+                "CameraY(\"HUD\") + 10"
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
               ]
             }
           ]
@@ -17094,7 +17545,11 @@
                 "337",
                 "1003",
                 "811",
+<<<<<<< HEAD
                 "\"UI\"",
+=======
+                "\"HUD\"",
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
                 ""
               ]
             }
@@ -17254,6 +17709,7 @@
           ]
         },
         {
+<<<<<<< HEAD
           "type": "BuiltinCommonInstructions::Comment",
           "color": {
             "b": 109,
@@ -17302,6 +17758,8 @@
           ]
         },
         {
+=======
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
           "type": "BuiltinCommonInstructions::Link",
           "include": {
             "includeConfig": 0
@@ -17366,7 +17824,11 @@
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
+<<<<<<< HEAD
           "name": "UI",
+=======
+          "name": "HUD",
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
           "renderingType": "",
           "visibility": true,
           "cameras": [],
@@ -48875,6 +49337,7 @@
           "actions": []
         }
       ]
+<<<<<<< HEAD
     },
     {
       "associatedLayout": "",
@@ -48946,6 +49409,8 @@
           ]
         }
       ]
+=======
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
     }
   ],
   "eventsFunctionsExtensions": [
@@ -59920,6 +60385,7 @@
           ]
         }
       ]
+<<<<<<< HEAD
     },
     {
       "author": "jack, DHsoftware, @Bouh",
@@ -60896,6 +61362,8 @@
       ],
       "eventsBasedBehaviors": [],
       "eventsBasedObjects": []
+=======
+>>>>>>> 6d28e12ef1d37f0d6b8d1ad2b6aec976df8ede84
     }
   ],
   "externalLayouts": []
